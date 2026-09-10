@@ -2,10 +2,16 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
+import FormattedDate from '../components/FormattedDate.astro';
+import { SITE_TITLE, BLOG_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
 
 const title = `404 Not Found | ${SITE_TITLE}`;
 const description = 'The page you were looking for does not exist.';
+
+const recentPosts = (await getCollection('rants'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 5);
 ---
 
 <html lang="en">
@@ -16,9 +22,36 @@ const description = 'The page you were looking for does not exist.';
 		<Header />
 		<main class="prose">
 			<h1>404</h1>
-			<p>The page you were looking for doesn't exist.</p>
-			<p><a href="/">Go back home</a></p>
+			<p>
+				That page doesn't exist — it may have moved, been renamed, or never
+				existed. <a href="/">Go back home</a>, or try one of these:
+			</p>
+
+			{
+				recentPosts.length > 0 && (
+					<>
+						<h2>Recent from {BLOG_TITLE}</h2>
+						<ul>
+							{recentPosts.map((post) => (
+								<li>
+									<a href={`/rants/${post.id}/`}>{post.data.title}</a>
+									{' — '}
+									<FormattedDate date={post.data.pubDate} />
+								</li>
+							))}
+						</ul>
+					</>
+				)
+			}
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+	ul {
+		padding-left: 1.25em;
+	}
+	li {
+		margin-bottom: 0.5em;
+	}
+</style>

@@ -12,3 +12,5 @@ Author: Brant Gehrke (Sargoto).
 - Set `site: 'https://sargoto.com'` in astro.config.mjs; keep RSS,
   sitemap, and OG tags working on every change.
 - Small, single-purpose commits with clear messages.
+- Default branch is `main`. Cloudflare Workers Builds deploys `main`
+  as production on every push (build command is set in wrangler.jsonc).

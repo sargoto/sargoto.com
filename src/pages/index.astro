@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, BLOG_TITLE } from '../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -23,6 +23,7 @@ const posts = (await getCollection('rants')).sort(
 				<p>{SITE_DESCRIPTION}</p>
 			</section>
 			<section>
+				<h2 class="section-title">Latest from {BLOG_TITLE}</h2>
 				<ul>
 					{
 						posts.map((post) => (
@@ -43,6 +44,10 @@ const posts = (await getCollection('rants')).sort(
 	</body>
 </html>
 <style>
+	.section-title {
+		font-size: 1.25em;
+		margin-bottom: 1em;
+	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;

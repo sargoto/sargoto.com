@@ -2,25 +2,129 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, BLOG_TITLE } from '../consts';
 
 const title = `About | ${SITE_TITLE}`;
-const description = 'About Brant Gehrke (Sargoto) and this blog.';
+const description = SITE_DESCRIPTION;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image="/images/avatar-placeholder.svg" />
 	</head>
 	<body>
 		<Header />
 		<main class="prose">
-			<h1>About</h1>
+			<div class="about-header">
+				<img
+					src="/images/avatar-placeholder.svg"
+					alt=""
+					width="160"
+					height="160"
+					class="avatar"
+				/>
+				<div>
+					<h1>Who is Sargoto?</h1>
+					<p>
+						Brant Gehrke. Sargoto is the handle — it's been mine online long
+						enough that plenty of people know it and not the name on my badge.
+					</p>
+				</div>
+			</div>
+
 			<p>
-				{SITE_TITLE} is the personal blog of Brant Gehrke, published under the
-				name Sargoto.
+				I work in information security. I stream on Twitch. I run a home lab
+				that started as one machine and has never stopped expanding. This
+				site is where the overlap goes.
 			</p>
+
+			<h2>The work</h2>
+			<p>
+				I'm an Assistant Director in information security at EY, in an
+				operations and engineering role. I've been there since 2022.
+			</p>
+			<p>
+				I got here on a route that doesn't show up in many infosec bios.
+				Seven years at Cousins Subs, most of them as a general manager. A year
+				on a level 1 help desk at the Medical College of Wisconsin. Then a
+				decade at Wells Fargo, where I spent most of my time on an operations
+				team — problem process coordinator, incident process coordinator,
+				change process expert, business systems analyst, plus enough project
+				coordination to know I'd rather be closer to the systems.
+			</p>
+			<p>
+				That path looks scattered on paper. It isn't. Every one of those jobs
+				was some version of the same problem: something is going wrong
+				repeatedly, nobody agrees on who owns it, and the fix has to survive
+				contact with people who have other priorities. Running a restaurant
+				during a lunch rush and running a major incident bridge are more alike
+				than either group would like to admit.
+			</p>
+			<p>
+				The credentials, for the people who need them: associate's degree in
+				computer science from WCTC, GIAC GSEC.
+			</p>
+
+			<h2>The code</h2>
+			<p>
+				C# is my strongest language, though it's been a while since I shipped
+				anything I'd point at. My Perl is better than my Python, which says
+				something about when I learned what. I'm actively fixing the Python
+				part.
+			</p>
+			<p>
+				Most of what I build now lives in the home lab — bare-metal Linux with
+				Docker on top, and a steady queue of things I want to understand well
+				enough to run myself. Lately that means self-hosting, automation
+				pipelines, and poking at LLMs hard enough to find where they break.
+			</p>
+
+			<h2>The stream</h2>
+			<p>
+				I stream on Twitch as Sargoto. Variety, genuinely variety — JRPGs,
+				shooters, racing, sports games, whatever has my attention that week.
+				No content calendar, no niche, no plan to develop one.
+			</p>
+
+			<h2>{BLOG_TITLE}</h2>
+			<p>
+				The blog. Occasional, opinionated, and usually about something that
+				annoyed me enough to write it down. Games, tech, the industry, and the
+				places those overlap. If you came here from a rant, that's the
+				section you want.
+			</p>
+
+			<h2>Elsewhere</h2>
+			<ul>
+				<li>
+					Twitch: <a href="https://twitch.tv/sargoto" target="_blank" rel="noopener noreferrer">twitch.tv/sargoto</a>
+				</li>
+				<li>
+					LinkedIn: <a href="https://linkedin.com/in/brantgehrke" target="_blank" rel="noopener noreferrer">linkedin.com/in/brantgehrke</a>
+				</li>
+			</ul>
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+	.about-header {
+		display: flex;
+		align-items: center;
+		gap: 1.5em;
+		margin-bottom: 1.5em;
+	}
+	.avatar {
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+	.about-header h1 {
+		margin-bottom: 0.25em;
+	}
+	@media (max-width: 500px) {
+		.about-header {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+</style>

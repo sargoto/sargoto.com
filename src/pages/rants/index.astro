@@ -2,7 +2,7 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { SITE_TITLE, BLOG_TITLE, BLOG_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
@@ -13,11 +13,15 @@ const posts = (await getCollection('rants')).sort(
 
 <html lang="en">
 	<head>
-		<BaseHead title={`Rants | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${BLOG_TITLE} | ${SITE_TITLE}`} description={BLOG_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
+			<section class="intro">
+				<h1>{BLOG_TITLE}</h1>
+				<p>{BLOG_DESCRIPTION}</p>
+			</section>
 			<section>
 				<ul>
 					{

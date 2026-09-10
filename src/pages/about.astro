@@ -103,6 +103,11 @@ const description = SITE_DESCRIPTION;
 					LinkedIn: <a href="https://linkedin.com/in/brantgehrke" target="_blank" rel="noopener noreferrer">linkedin.com/in/brantgehrke</a>
 				</li>
 			</ul>
+
+			<p class="disclaimer">
+				Opinions here are mine and not my employer's, which should go without
+				saying but apparently never does.
+			</p>
 		</main>
 		<Footer />
 	</body>
@@ -120,6 +125,12 @@ const description = SITE_DESCRIPTION;
 	}
 	.about-header h1 {
 		margin-bottom: 0.25em;
+	}
+	.disclaimer {
+		margin-top: 2em;
+		font-size: 0.85em;
+		font-style: italic;
+		color: rgb(var(--gray));
 	}
 	@media (max-width: 500px) {
 		.about-header {

@@ -7,3 +7,5 @@ export const SITE_DESCRIPTION =
 export const BLOG_TITLE = 'The Brant Rants';
 export const BLOG_DESCRIPTION =
 	'Occasional, opinionated posts about games, tech, the industry, and the places those overlap.';
+
+export const DEFAULT_OG_IMAGE = '/images/og-default.png';

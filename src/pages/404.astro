@@ -1,0 +1,24 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+const title = `404 Not Found | ${SITE_TITLE}`;
+const description = 'The page you were looking for does not exist.';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body>
+		<Header />
+		<main class="prose">
+			<h1>404</h1>
+			<p>The page you were looking for doesn't exist.</p>
+			<p><a href="/">Go back home</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>

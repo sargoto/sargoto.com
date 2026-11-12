@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import { BLOG_TITLE, BLOG_DESCRIPTION } from '../consts';
 
 export async function GET(context) {
-	const posts = await getCollection('rants');
+	const posts = (await getCollection('rants')).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	);
 	const feedUrl = new URL('rss.xml', context.site);
 	return rss({
 		title: BLOG_TITLE,

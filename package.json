@@ -17,7 +17,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.5",

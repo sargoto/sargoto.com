@@ -4,6 +4,10 @@ description: 'Warframe, Destiny 2, the Red War, and why live service games confu
 pubDate: 2024-01-18
 ---
 
+![Screenshot of a Warframe standing in its ship, holding a rifle.](./lost-my-head.webp)
+
+*Lost my head.*
+
 Someone really wanted me to make "content" again, and I was feeling a little bit inspired recently on account of having started playing Warframe again because some friends were playing the Warframe. The middle of last year I really started prioritizing spending time with folks rather then focusing on creating content, so while Warframe generally intimidates me I jumped in to spend time with them.
 
 I'm pretty happy that I did, firstly I've been having a blast hanging out with folks, and the gameplay is really quick and fast. I first played Warframe back on the ps4 when I first got one, and it was one of the first games that made the touch pad make sense to me. I didn't play a ton at this time seeing how hostile the design was with needing platinum (a premium cash shop currency) to speed up building and stuff didn't jive with my lifestyle back then.

@@ -1,5 +1,5 @@
 ---
-title: 'Lost my head.'
+title: 'Warframe Vs Destiny 2'
 description: 'Warframe, Destiny 2, the Red War, and why live service games confuse me.'
 pubDate: 2024-01-18
 ---

@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { DEFAULT_OG_IMAGE } from '../consts';
+import { BLOG_TITLE, DEFAULT_OG_IMAGE } from '../consts';
 
 interface Props {
 	title: string;
@@ -45,11 +45,11 @@ const ogImage = new URL(image, Astro.url).toString();
 )}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
 
 <!-- RSS Feed -->
-<link rel="alternate" type="application/rss+xml" title={title} href={new URL('rss.xml', Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={BLOG_TITLE} href={new URL('rss.xml', Astro.site)} />
